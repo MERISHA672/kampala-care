@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>KampalaCare | Smart Services</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            <span>KC</span>
+            KampalaCare
+        </div>
+
+        <nav id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#providers">Providers</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-actions">
+
+            <button class="icon-btn" onclick="toggleDarkMode()">
+                🌙
+            </button>
+
+            <button class="login-btn" onclick="openLogin()">
+                Login
+            </button>
+
+            <button class="menu-btn" onclick="toggleMenu()">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                ✨ Trusted services in Uganda
+            </div>
+
+            <h1>
+                Find trusted services
+                <span>near you.</span>
+            </h1>
+
+            <p>
+                KampalaCare helps you discover reliable service
+                providers, compare options and book services
+                quickly and easily.
+            </p>
+
+            <div class="hero-search">
+
+                <input
+                    type="text"
+                    id="heroSearch"
+                    placeholder="What service are you looking for?"
+                >
+
+                <button onclick="searchFromHero()">
+                    Search
+                </button>
+
+            </div>
+
+            <div class="quick-links">
+
+                <span>Popular:</span>
+
+                <button onclick="filterService('Cleaning')">
+                    Cleaning
+                </button>
+
+                <button onclick="filterService('Plumbing')">
+                    Plumbing
+                </button>
+
+                <button onclick="filterService('Electrical')">
+                    Electrical
+                </button>
+
+                <button onclick="filterService('Beauty')">
+                    Beauty
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="floating-card card-one">
+                ⭐ 4.9 Rating
+            </div>
+
+            <div class="hero-circle">
+                🏠
+            </div>
+
+            <div class="floating-card card-two">
+                👥 2,500+ Users
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div>
+            <strong>2,500+</strong>
+            <span>Happy Users</span>
+        </div>
+
+        <div>
+            <strong>850+</strong>
+            <span>Service Providers</span>
+        </div>
+
+        <div>
+            <strong>4.8/5</strong>
+            <span>Average Rating</span>
+        </div>
+
+        <div>
+            <strong>24/7</strong>
+            <span>Support</span>
+        </div>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="section" id="services">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="eyebrow">EXPLORE SERVICES</span>
+
+                <h2>
+                    What do you need help with?
+                </h2>
+            </div>
+
+            <div class="filters">
+
+                <button
+                    class="filter active"
+                    onclick="filterService('All', this)">
+                    All
+                </button>
+
+                <button
+                    class="filter"
+                    onclick="filterService('Cleaning', this)">
+                    Cleaning
+                </button>
+
+                <button
+                    class="filter"
+                    onclick="filterService('Plumbing', this)">
+                    Plumbing
+                </button>
+
+                <button
+                    class="filter"
+                    onclick="filterService('Electrical', this)">
+                    Electrical
+                </button>
+
+                <button
+                    class="filter"
+                    onclick="filterService('Beauty', this)">
+                    Beauty
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="service-grid" id="serviceGrid">
+
+            <!-- SERVICE 1 -->
+
+            <article
+                class="service-card"
+                data-category="Cleaning">
+
+                <div class="service-image cleaning">
+                    🧹
+                </div>
+
+                <div class="service-content">
+
+                    <div class="card-top">
+
+                        <span class="category">
+                            Cleaning
+                        </span>
+
+                        <button
+                            class="favorite"
+                            onclick="toggleFavorite(this)">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <h3>Professional Home Cleaning</h3>
+
+                    <p>
+                        Reliable home and office cleaning
+                        services for a fresh environment.
+                    </p>
+
+                    <div class="provider">
+                        <div class="provider-avatar">
+                            AN
+                        </div>
+
+                        <div>
+                            <strong>Anna Nakato</strong>
+                            <small>⭐ 4.9 · 128 reviews</small>
+                        </div>
+                    </div>
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            UGX 35,000
+                        </strong>
+
+                        <button
+                            onclick="openBooking('Professional Home Cleaning', 'Anna Nakato')">
+                            Book Now
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 2 -->
+
+            <article
+                class="service-card"
+                data-category="Plumbing">
+
+                <div class="service-image plumbing">
+                    🔧
+                </div>
+
+                <div class="service-content">
+
+                    <div class="card-top">
+
+                        <span class="category">
+                            Plumbing
+                        </span>
+
+                        <button
+                            class="favorite"
+                            onclick="toggleFavorite(this)">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <h3>Professional Plumbing</h3>
+
+                    <p>
+                        Fast plumbing repairs, installations
+                        and emergency maintenance.
+                    </p>
+
+                    <div class="provider">
+
+                        <div class="provider-avatar">
+                            JM
+                        </div>
+
+                        <div>
+                            <strong>John Mark</strong>
+                            <small>⭐ 4.8 · 96 reviews</small>
+                        </div>
+
+                    </div>
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            UGX 40,000
+                        </strong>
+
+                        <button
+                            onclick="openBooking('Professional Plumbing', 'John Mark')">
+                            Book Now
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 3 -->
+
+            <article
+                class="service-card"
+                data-category="Electrical">
+
+                <div class="service-image electrical">
+                    ⚡
+                </div>
+
+                <div class="service-content">
+
+                    <div class="card-top">
+
+                        <span class="category">
+                            Electrical
+                        </span>
+
+                        <button
+                            class="favorite"
+                            onclick="toggleFavorite(this)">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <h3>Electrical Installation</h3>
+
+                    <p>
+                        Professional electrical installation,
+                        repair and maintenance.
+                    </p>
+
+                    <div class="provider">
+
+                        <div class="provider-avatar">
+                            DK
+                        </div>
+
+                        <div>
+                            <strong>David Kato</strong>
+                            <small>⭐ 4.9 · 74 reviews</small>
+                        </div>
+
+                    </div>
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            UGX 50,000
+                        </strong>
+
+                        <button
+                            onclick="openBooking('Electrical Installation', 'David Kato')">
+                            Book Now
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 4 -->
+
+            <article
+                class="service-card"
+                data-category="Beauty">
+
+                <div class="service-image beauty">
+                    💇🏽‍♀️
+                </div>
+
+                <div class="service-content">
+
+                    <div class="card-top">
+
+                        <span class="category">
+                            Beauty
+                        </span>
+
+                        <button
+                            class="favorite"
+                            onclick="toggleFavorite(this)">
+                            ♡
+                        </button>
+
+                    </div>
+
+                    <h3>Beauty & Hair Services</h3>
+
+                    <p>
+                        Professional hair styling, beauty
+                        treatments and personal care.
+                    </p>
+
+                    <div class="provider">
+
+                        <div class="provider-avatar">
+                            SN
+                        </div>
+
+                        <div>
+                            <strong>Sarah Namusoke</strong>
+                            <small>⭐ 5.0 · 156 reviews</small>
+                        </div>
+
+                    </div>
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            UGX 30,000
+                        </strong>
+
+                        <button
+                            onclick="openBooking('Beauty & Hair Services', 'Sarah Namusoke')">
+                            Book Now
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section class="how-section">
+
+        <div class="section-heading centered">
+
+            <span class="eyebrow">
+                SIMPLE PROCESS
+            </span>
+
+            <h2>
+                How KampalaCare works
+            </h2>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>Search</h3>
+
+                <p>
+                    Find the service you need using our
+                    search and category filters.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>Compare</h3>
+
+                <p>
+                    Compare providers based on ratings,
+                    reviews and prices.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>Book</h3>
+
+                <p>
+                    Select your preferred provider and
+                    schedule a convenient time.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>Enjoy</h3>
+
+                <p>
+                    Get your service and leave a review
+                    to help other users.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROVIDERS -->
+
+    <section class="section" id="providers">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="eyebrow">
+                    TOP PROVIDERS
+                </span>
+
+                <h2>
+                    Trusted professionals
+                </h2>
+
+            </div>
+
+        </div>
+
+
+        <div class="providers-grid">
+
+            <div class="professional">
+
+                <div class="big-avatar">
+                    AN
+                </div>
+
+                <h3>Anna Nakato</h3>
+
+                <p>Home Cleaning Specialist</p>
+
+                <div class="rating">
+                    ⭐ 4.9
+                </div>
+
+                <button onclick="openBooking('Home Cleaning', 'Anna Nakato')">
+                    View Profile
+                </button>
+
+            </div>
+
+
+            <div class="professional">
+
+                <div class="big-avatar">
+                    JM
+                </div>
+
+                <h3>John Mark</h3>
+
+                <p>Licensed Plumber</p>
+
+                <div class="rating">
+                    ⭐ 4.8
+                </div>
+
+                <button onclick="openBooking('Plumbing', 'John Mark')">
+                    View Profile
+                </button>
+
+            </div>
+
+
+            <div class="professional">
+
+                <div class="big-avatar">
+                    SN
+                </div>
+
+                <h3>Sarah Namusoke</h3>
+
+                <p>Beauty Specialist</p>
+
+                <div class="rating">
+                    ⭐ 5.0
+                </div>
+
+                <button onclick="openBooking('Beauty Services', 'Sarah Namusoke')">
+                    View Profile
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <div>
+
+            <span class="eyebrow">
+                ABOUT KAMPALACARE
+            </span>
+
+            <h2>
+                Making local services easier to access.
+            </h2>
+
+            <p>
+                KampalaCare is a digital platform designed
+                to connect customers with trusted local
+                service providers.
+            </p>
+
+            <p>
+                Our goal is to make finding, comparing and
+                booking services simple, transparent and
+                convenient.
+            </p>
+
+        </div>
+
+        <div class="about-box">
+
+            <div>
+                <strong>850+</strong>
+                <span>Providers</span>
+            </div>
+
+            <div>
+                <strong>2,500+</strong>
+                <span>Customers</span>
+            </div>
+
+            <div>
+                <strong>12</strong>
+                <span>Categories</span>
+            </div>
+
+            <div>
+                <strong>4.8</strong>
+                <span>Average Rating</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-brand">
+
+            <div class="logo">
+                <span>KC</span>
+                KampalaCare
+            </div>
+
+            <p>
+                Connecting Uganda with trusted services.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>Platform</h4>
+
+            <a href="#services">Services</a>
+            <a href="#providers">Providers</a>
+            <a href="#about">About</a>
+
+        </div>
+
+        <div>
+
+            <h4>Support</h4>
+
+            <a href="#">Help Center</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy</a>
+
+        </div>
+
+        <div>
+
+            <h4>Contact</h4>
+
+            <p>📍 Kampala, Uganda</p>
+            <p>📞 +256 700 000000</p>
+            <p>✉️ hello@kampalacare.com</p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- BOOKING MODAL -->
+
+    <div class="modal" id="bookingModal">
+
+        <div class="modal-box">
+
+            <button
+                class="close"
+                onclick="closeBooking()">
+                ×
+            </button>
+
+            <span class="eyebrow">
+                BOOK SERVICE
+            </span>
+
+            <h2 id="bookingTitle">
+                Book Service
+            </h2>
+
+            <p id="bookingProvider"></p>
+
+
+            <form onsubmit="confirmBooking(event)">
+
+                <label>Your Name</label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label>Phone Number</label>
+
+                <input
+                    type="tel"
+                    placeholder="+256..."
+                    required
+                >
+
+
+                <label>Preferred Date</label>
+
+                <input
+                    type="date"
+                    required
+                >
+
+
+                <label>Preferred Time</label>
+
+                <input
+                    type="time"
+                    required
+                >
+
+
+                <label>Location</label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your location"
+                    required
+                >
+
+
+                <button class="submit-btn">
+                    Confirm Booking
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- LOGIN MODAL -->
+
+    <div class="modal" id="loginModal">
+
+        <div class="modal-box">
+
+            <button
+                class="close"
+                onclick="closeLogin()">
+                ×
+            </button>
+
+            <span class="eyebrow">
+                WELCOME BACK
+            </span>
+
+            <h2>Login to KampalaCare</h2>
+
+            <form onsubmit="login(event)">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    placeholder="you@example.com"
+                    required
+                >
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    placeholder="Enter password"
+                    required
+                >
+
+                <button class="submit-btn">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="register-text">
+                Don't have an account?
+                <strong onclick="registerMessage()">
+                    Create one
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+
+    <div id="toast" class="toast">
+        Booking confirmed successfully!
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
